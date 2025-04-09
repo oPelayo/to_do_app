@@ -87,6 +87,7 @@ To run the unit tests:
 
 ```bash
 ./mvnw test
+```
 
 ##Contributing
 Contributions are welcome. Please create a Pull Request with your changes.
