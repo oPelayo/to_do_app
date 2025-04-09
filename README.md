@@ -89,8 +89,8 @@ To run the unit tests:
 ./mvnw test
 ```
 
-##Contributing
+## Contributing
 Contributions are welcome. Please create a Pull Request with your changes.
 
-##License
+## License
 This project is under the MIT license.
