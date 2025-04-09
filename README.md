@@ -29,7 +29,7 @@ The API provides endpoints for:
 1.  Clone the repository:
 
     ```bash
-    git clone [https://github.com/oPelayo/to_do_app.git](https://github.com/oPelayo/to_do_app.git)
+    git clone https://github.com/oPelayo/to_do_app.git
     ```
 
 2.  Navigate to the project directory:
