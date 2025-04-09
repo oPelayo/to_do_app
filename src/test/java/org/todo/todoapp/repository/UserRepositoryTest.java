@@ -21,7 +21,7 @@ public class UserRepositoryTest {
         testUser = new User();
         testUser.setUsername("testUser");
         testUser.setEmail("test@email.com");
-        testUser.setPassword("password"); // Asumiendo que User tiene un campo password
+        testUser.setPassword("password");
         userRepository.save(testUser);
     }
 
