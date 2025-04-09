@@ -7,6 +7,7 @@ import org.todo.todoapp.model.Task;
 import org.todo.todoapp.model.TaskStatus;
 import org.todo.todoapp.repository.TaskRepository;
 import org.todo.todoapp.service.TaskService;
+import org.todo.todoapp.validation.TaskValidator;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -15,13 +16,16 @@ import java.util.List;
 public class TaskServiceImpl implements TaskService {
 
     private final TaskRepository taskRepository;
+    private final TaskValidator taskValidator;
 
-    public TaskServiceImpl(TaskRepository taskRepository){
+    public TaskServiceImpl(TaskRepository taskRepository, TaskValidator taskValidator){
         this.taskRepository = taskRepository;
+        this.taskValidator = taskValidator;
     }
 
     @Override
     public Task createTask(Task task) {
+        taskValidator.validate(task);
         return taskRepository.save(task);
     }
 
@@ -41,6 +45,7 @@ public class TaskServiceImpl implements TaskService {
             throw new TaskNotFoundException("Task with ID: " + id + " not found");
         }
         task.setId(id);
+        taskValidator.validate(task);
         return taskRepository.save(task);
     }
 
